@@ -1,0 +1,93 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPLmqOSyYKlBiGUf/CbPPha",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Diksha20ingle/Diksha20ingle/blob/main/.txt%20file\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "W-HLw88eVNdr",
+        "outputId": "2ba1276e-ab64-4576-c96f-11abe17abc78"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cloning into 'nanoGPT'...\n",
+            "remote: Enumerating objects: 686, done.\u001b[K\n",
+            "remote: Total 686 (delta 0), reused 0 (delta 0), pack-reused 686 (from 1)\u001b[K\n",
+            "Receiving objects: 100% (686/686), 954.03 KiB | 18.71 MiB/s, done.\n",
+            "Resolving deltas: 100% (387/387), done.\n",
+            "/content/nanoGPT\n",
+            "\u001b[31mERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'\u001b[0m\u001b[31m\n",
+            "\u001b[0m"
+          ]
+        }
+      ],
+      "source": [
+        "# Install nanoGPT and dependencies\n",
+        "!git clone https://github.com/karpathy/nanoGPT.git\n",
+        "%cd nanoGPT\n",
+        "!pip install -r requirements.txt\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create folder and file for dataset\n",
+        "!mkdir -p data/chat  # makes a folder to store the dataset\n",
+        "\n",
+        "# Define some simple dialogue in a string\n",
+        "sample_chat = \"\"\"User: Hello!\n",
+        "Bot: Hi there! How can I help you today?\n",
+        "\n",
+        "User: What's your name?\n",
+        "Bot: I'm a friendly chatbot.\n",
+        "\n",
+        "User: Tell me a joke.\n",
+        "Bot: Why don’t scientists trust atoms? Because they make up everything!\n",
+        "\"\"\"\n",
+        "\n",
+        "# Write the string to a text file\n",
+        "with open(\"data/chat/chat.txt\", \"w\") as f:\n",
+        "    f.write(sample_chat)\n",
+        "\n",
+        "# Confirm file was created\n",
+        "!cat data/chat/chat.txt\n"
+      ],
+      "metadata": {
+        "id": "rj0TFjzpumbW"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
